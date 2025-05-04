@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Birthday Message</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .message-box {
+      max-width: 800px;
+      margin: 10% auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      background: #ff4d79;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: #e6005c;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <canvas id="petals"></canvas>
+
+  <div class="message-box">
+    <h2>🌸 To the Most Special Person 🌸</h2>
+    <p>
+      On this day, the world became brighter because you were born. <br/><br/>
+      Every smile you give lights up. <br/>
+      Every memory of yours is a piece of magic. <br/><br/>
+      I created this page for you because you deserve something as beautiful as your soul. <br/>
+      Happy Birthday. 💖
+    </p>
+    <a href="index.html" class="back-link">Back to Main Page</a>
+  </div>
+
+  <script src="petals.js"></script>
+</body>
+</html>
