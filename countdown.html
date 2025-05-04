@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Countdown</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .countdown-box {
+      text-align: center;
+      color: white;
+      margin-top: 20%;
+    }
+
+    .countdown-box h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #ff4d79;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: #e6005c;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <canvas id="petals"></canvas>
+
+  <div class="countdown-box">
+    <h1>Countdown to Your Special Moment 💖</h1>
+    <div class="timer" id="countdown"></div>
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+  </div>
+
+  <script src="petals.js"></script>
+  <script>
+    // Set your target date (YYYY-MM-DDTHH:MM:SS)
+    const targetDate = new Date("2025-01-09T00:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdown.innerHTML = "🎉 It's time! Happy Birthday! 🎉";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
