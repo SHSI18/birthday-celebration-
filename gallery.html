@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .gallery-container {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-link {
+      display: block;
+      margin: 30px auto;
+      width: fit-content;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background: #ff4d79;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: #e6005c;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <canvas id="petals"></canvas>
+
+  <div class="gallery-container">
+    <!-- Replace with your own images -->
+    <img src="images/photo1.jpg" alt="Memory 1">
+    <img src="images/photo2.jpg" alt="Memory 2">
+    <img src="images/photo3.jpg" alt="Memory 3">
+  </div>
+
+  <a href="index.html" class="back-link">← Back to Main Page</a>
+
+  <script src="petals.js"></script>
+</body>
+</html>
